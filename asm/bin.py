@@ -1,0 +1,95 @@
+f = open("rom_asm.txt", "w").close()
+f = open("rom_asm.txt", "a")
+with open("asm.S","r") as code:
+    for line in code:
+                inst = 0
+                if line.split()[0] == 'LOAD':
+                    inst = str('{0:04b}'.format(1))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[1])))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[2])))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[3])))
+                    print(inst)
+                if line.split()[0] == 'STORE':
+                    inst = str('{0:04b}'.format(2))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[1])))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[2])))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[3])))
+                    print(inst)
+                if line.split()[0] == 'SET':
+                    inst = str('{0:04b}'.format(3))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[1])))
+                    inst = inst + str('{0:08b}'.format(int(line.split()[2])))
+                    print(inst)
+                if line.split()[0] == 'LT':
+                    inst = str('{0:04b}'.format(4))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[1])))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[2])))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[3])))
+                    print(inst)
+                if line.split()[0] == 'EQ':
+                    inst = str('{0:04b}'.format(5))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[1])))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[2])))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[3])))
+                    print(inst)
+                if line.split()[0] == 'BEQ':
+                    inst = str('{0:04b}'.format(6))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[1])))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[2])))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[3])))
+                    print(inst)
+                if line.split()[0] == 'BNEQ':
+                    inst = str('{0:04b}'.format(7))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[1])))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[2])))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[3])))
+                    print(inst)
+                if line.split()[0] == 'ADD':
+                    inst = str('{0:04b}'.format(8))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[1])))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[2])))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[3])))
+                    print(inst)
+                if line.split()[0] == 'SUB':
+                    inst = str('{0:04b}'.format(9))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[1])))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[2])))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[3])))
+                    print(inst)
+                if line.split()[0] == 'SHL':
+                    inst = str('{0:04b}'.format(10))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[1])))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[2])))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[3])))
+                    print(inst)
+                if line.split()[0] == 'SHR':
+                    inst = str('{0:04b}'.format(11))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[1])))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[2])))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[3])))
+                    print(inst)
+                if line.split()[0] == 'AND':
+                    inst = str('{0:04b}'.format(12))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[1])))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[2])))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[3])))
+                    print(inst)
+                if line.split()[0] == 'OR':
+                    inst = str('{0:04b}'.format(13))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[1])))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[2])))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[3])))
+                    print(inst)
+                if line.split()[0] == 'INV':
+                    inst = str('{0:04b}'.format(14))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[1])))
+                    inst = inst + str('{0:08b}'.format(int(line.split()[2])))
+                    print(inst)
+                if line.split()[0] == 'XOR':
+                    inst = str('{0:04b}'.format(15))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[1])))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[2])))
+                    inst = inst + str('{0:04b}'.format(int(line.split()[3])))
+                    print(inst)
+                f.write(inst+'\n')
+f.close()

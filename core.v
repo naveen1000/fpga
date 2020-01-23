@@ -105,7 +105,9 @@ initial begin
 end
 
 always @(posedge clk) begin
+ // $display("%b",address);
   inst <= rom[address];
+ // #2 $display("%b",inst);
 end
 
 endmodule // ROM
